@@ -1,0 +1,63 @@
+
+<app-header></app-header>
+<div class="container">
+    <h2>Nossas salas disponiveis agora.</h2>
+    <p>
+      Todas as nossas salas estão localizadas em São Paulo 
+    </p>
+  
+    <app-selecao-data></app-selecao-data>
+
+<div class="d-flex" >
+
+     <!-- colunaa para cartoes de horarioss-->
+    <div class="col-8"  >
+        <div *ngFor="let horario of horarios" style="margin-top: 10px;">
+            <h5>{{horario.diaDisponivel}} <strong>{{horario.mesDisponivel}} </strong>, {{horario.semanaDisponivel}} </h5>
+            <p>No período da <strong>- Manhã</strong></p>
+            <div class="d-flex">
+                <div class="card col-2 text-center">
+                    <div class="card-body">
+                        {{horario.horadisponivelManha}}
+                    </div>
+                </div>
+        
+    
+            </div>
+        
+            <p>No período da <strong>- Tarde</strong></p>
+            <div class="d-flex">
+                <div class="card col-2 text-center">
+                    <div class="card-body">
+                       {{horario.horadisponivelTarde}}
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+     <!-- FIM colunaa para cartoes de horarioss-->
+
+
+    <!-- colunaa para cartao de reservaaa-->
+    <div class="col-4">
+      
+        <div class="card">
+            <div class="card-body">
+                <p>Valor Total</p>
+                <h3>R${{sala.preco}}</h3>
+                <p>2 reservas</p>
+                <button
+                style="background-color: #6f42c1  ;  width: -webkit-fill-available;"
+                type="button"
+                class="btn btn-primary"
+              >
+                Reservar
+              </button>
+            </div>
+        </div>
+    </div>
+    <!-- colunaa para cartao de reservaaa-->
+</div>
+</div>

@@ -1,0 +1,60 @@
+<app-header></app-header>
+
+<div class="container">
+  <h2>Nossas salas disponiveis agora.</h2>
+  <p>
+    Todas as nossas salas estão localizadas em São Paulo 
+  </p>
+
+  <app-selecao-data></app-selecao-data>
+
+  <p>Encontramos 2 salas disponíveis</p>
+
+  <!--Começo cartão salas disponiveis -->
+  <div class="card mb-3" style="max-width: 900px" 
+  *ngFor="let sala of salas"
+ >
+    <div class="row g-0">
+      <div class="col-md-3 d-flex">
+        <img
+          src="{{sala.img}}"
+          class="img-fluid rounded-start"
+          alt="..."
+        />
+      </div>
+      <div class="col-md-3">
+        <div class="card-body">
+          <h5 class="card-title">{{sala.nome}}</h5>
+          <p class="card-text">{{sala.local}}</p>
+          <div class="card" style="width: 80px; font-size: 10px">
+            {{sala.movel}}
+          </div>
+          <p class="card-text">Ideal Para</p>
+          <div class="row">
+            <div class="card" style="width: 80px; font-size: 10px">
+              {{sala.perfil}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card-body">
+          <p class="card-text">Tudo incluso por</p>
+          <h5 class="card-title">R$ {{sala.preco}}/h</h5>
+        </div>
+      </div>
+      <div class="col-md-3 d-flex justify-content-center align-items-center">
+        <button
+          style="background-color: #6f42c1"
+          type="button"
+          class="btn btn-primary"
+
+          [routerLink]="['/horarios-disponiveis', sala.id]"
+
+        >
+          Reservar
+        </button>
+      </div>
+    </div>
+  </div>
+  <!--FIM cartão salas disponiveis -->
